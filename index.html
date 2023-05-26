@@ -20,26 +20,47 @@
     <!--【外部】另外可以把样式作为外部样式表，然后引入进来，等同于style标签-->
     <style>
       p {
-        color: blue;
+        color: black;
+        text-indent: 2em;
       }
+      a {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        display: block;
+        color: black;
+        text-indent: 2em;
+      }
+      h4 {
+        color: rgb(75, 9, 9);
+        background-color: blanchedalmond;
+      }
+
       #one {
         color: green;
       }
       .name {
         color: red;
       }
+      .item {
+        text-indent: 0em !important;
+        background-color: brown;
+        height: 150px;
+        width: 150px;
+        margin: 30px;
+      }
     </style>
-    <link rel="stylesheet" type="text/css" href="index.css" />
+    <!--<link rel="stylesheet" type="text/css" href="index.css" />-->
   </head>
 
-  <body>
-    <p id="one">这一行通过标签单独改变颜色</p>
-    <p class="name">这一行通过class选择器单独改变颜色</p>
-    <div
+  <body style="display: flex; flex-direction: column;align-items:center;margin:0px;">
+    <!--网页头部，包含图片和主标题-->
+    <myohoto
       style="
+        width:100%;
         text-align: center;
         color: rgba(175, 194, 211, 0.603);
-        margin: 30px auto;
+
+        background-color: #f4f4f4;
       "
     >
       <img
@@ -57,42 +78,127 @@
         HTML/CSS学习笔记
       </h1>
       <p style="font-size: 12px; margin-top: 0">这是一级标题内容</p>
+    </myohoto>
+
+    <!--网页中部，HTML的学习部分-->
+    <div style="max-width: 700px; margin: 30px auto">
+      <h3 style="text-align: center">HTML基础</h3>
+      <h4>相对位置的文件路径</h4>
+      <p>./代表相同目录，../代表上级目录</p>
+      <h4>静态网站</h4>
+      <p>只能看内容，没有功能。</p>
+      <h4>常用的标签解释</h4>
+      <p>div可以包含任意标签，用的最多</p>
+      <p>p是段落的意思</p>
+      <p><中间的是标签名></p>
+      <p>style="这个p标签的样式？"浏览器会有默认样式，占据一整行</p>
+      <zidingyi> 自定义标签是什么style都没有，内容有多大盒子就多大</zidingyi>
+      <p>
+        div：division的缩写：分开，分割，专门用来分大盒子的标签，默认样式只有一个：display:block
+      </p>
+      <p>src=source</p>
+      <p>
+        输入框标签只能单个写，目前并不知道怎么把输入框放到想要的位置，缩进只针对输入框中的文字
+      </p>
+      <input value="aaa" />
+      <h4>网址</h4>
+      <p>网络地址由三部分构成：网路协议，域名，路径地址</p>
+      <p>协议：https加密协议，有窃取和更改传输数据的风险</p>
+      <h4>三个学习网站：</h4>
+      <a href="https://www.runoob.com/html/html-tutorial.html"
+        >中文标签搜索网址：菜鸟教程的html教程</a
+      >
+      <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML "
+        >mdnHTML网站</a
+      >
+      <a href="https://codingfantasy.com/games/flexboxadventure/play"
+        >flex游戏练习网站</a
+      >
     </div>
 
+    <!--网页中部，CSS的学习部分-->
     <div style="max-width: 700px; margin: 30px auto">
-      相对位置：./代表相同目录，../代表上级目录
-      <div>div可以包含任意标签，用的最多</div>
-      <a href="https://www.runoob.com/html/html-tutorial.html"
-        >标签搜索网址：菜鸟教程的html教程</a
-      >
-
-      <p>p是段落的意思</p>
-      <中间的是标签名>
-      <p>style="这个p标签的样式？">浏览器会有默认样式，占据一整行</p>
-      <zidingyi> 自定义标签是什么style都没有，内容有多大盒子就多大</zidingyi>
+      <h3 style="text-align: center">CSS的布局</h3>
+      <h4>这里是知识点的名称</h4>
+      <p>这里是知识点的内容这里是知识点的内容这里是知识点的内容</p>
+      <h4>基础排版属性</h4>
       <p>默认的样式属性：display:block; 显示：块</p>
       <p>display:block;是占满上一级盒子的一整行</p>
       <p>
         margin外边距；border边框；padding，内边距：和内部内容的距离；width和hight是内部内容的宽和高
       </p>
-      <p>
-        div：division的缩写：分开，分割，专门用来分大盒子的标签，默认样式只有一个：display:block
-      </p>
-      <p>src=source</p>
-
-      <input value="aaa" />输入框标签只能单个写
-      <p>网络地址由三部分构成：网路协议，域名，路径地址</p>
-      <p>协议：https加密协议，有窃取和更改传输数据的风险</p>
-      <p></p>
-      <div style="display: block">
-        css是F12种的样式栏。css排版：盒模型：块模型block box/内联模型inline box
-      </div>
-      <div>内联模型默认不换行，block会换。</div>
+      <p>css在网页F12中的样式栏。</p>
       <p>样式中会显示标签的默认css属性，并有element.style可以自定义属性</p>
-      <!--写注释-->
-      css的三种使用方式:1.style内联样式，问题：一些常见的属性会重复写；2.内部样式表：在head里面写style；3.
+      <p>css排版：盒模型。包括：块模型block box/内联模型inline box。</p>
+      <p>内联模型默认不换行，block会换。</p>
+      <p><!--写注释--></p>
+      <p>css的三种使用方式:</p>
+
+      <p style="text-indent: 3em">1.【内联】直接写标签名，尽量使用这个</p>
+      <p style="text-indent: 3em">2.【内部】id法：给要改的标签加id</p>
+      <p style="text-indent: 3em">
+        3.【内部】class选择器，多个html标签的class可以相同，网页比较大的时候该方法很常用
+        <p>【外部】另外可以把样式作为外部样式表，然后引入进来，等同于style标签</p>
+        <p style="text-indent: 3em">
+          css选择器：优先级：内联>内部>外部，但可以用color：red
+        </p>
+      </p>
+      <p style="text-indent: 3em">
+      </p>
+      <p style="text-indent: 3em">！important强制改变，尽量不用</p>
+      <p id="one" style="text-indent: 3em">这一行通过标签单独改变颜色</p>
+      <p class="name" style="text-indent: 3em">这一行通过class选择器单独改变颜色</p>
+
+      <h4>display：flex</h4>
+      <p>最重要的用来布局的属性.</p>
+      <p>
+        很重要的布局属性，display：flex弹性盒子模型，现在网页开发中基本使用flex。
+      </p>
+      <p>同时布局手机和电脑端很简单。</p>
+      <p>
+        把body的display改为flex，body的默认排版是横向，它控制所有块从左往右排列。
+      </p>
+      <p>
+        实验结果是把item-align：center放在body中，不影响下面三个方块的居中排列，但是放在三个方块的直接上级就没有问题。
+      </p>
+      <div style="display: flex; flex-direction: row; align-items: center">
+        <p class="item">这是第一个盒子</p>
+        <p class="item">这是第二个盒子</p>
+        <p class="item">
+          这是第三个盒子，我们用内部样式表和display的来控制这三个盒子的排版
+        </p>
+      </div>
+      <h4>position</h4>
+      <p></p>
+      <h4>float</h4>
+      <p></p>
+      <h4></h4>
+      <p></p>
+      <h4></h4>
+      <p></p>
+      <h4></h4>
+      <p></p>
+      <h4></h4>
+      <p></p>
+      <h4></h4>
+      <p></p>
+      <h4></h4>
+      <p></p>
     </div>
 
-    很重要的布局属性，display：flex弹性盒子模型，现在网页开发中基本使用flex。
+    <!--网页尾部，版权声明等-->
+    <tile
+      style="
+        width:100%;
+        background-color: #f4f4f4;
+        text-align: center;
+        font-size: 12px;
+        padding:30px;
+
+      "
+    >
+      <p style="text-indent: 0em">网页作者：Joyce</p>
+      <p>这里是我的网站学习笔记👆</p>
+    </tile>
   </body>
 </html>
